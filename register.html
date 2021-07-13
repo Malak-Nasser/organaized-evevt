@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <!-- start  top bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+          <span>THE ORGANAIZED </span><span>EVENT</span>
+          </a
+          
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav ms-auto flex-nowrap ">
+            
+               <li class="nav-item">
+                <a class="nav-link "  href="index.html">الرئيسية</a>
+              </li>
+            
+            </ul>
+            
+          </div>
+        </div>
+      </nav> <!-- end top bar-->
+      
+    <!-- start form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="test.php" method="post" id="fileForm" role="form">
+                <fieldset><legend class="text-center">انضم الينا وشارك في تنظيم فعاليات الجامعة. <span class="req"><small> مطلوب *</small></span></legend>
+    
+               
+    
+                <div class="form-group"> 	 
+                    <label for="firstname"><span class="req">* </span> الأسم الأول: </label>
+                        <input class="form-control" type="text" name="firstname" id = "txt" onkeyup = "Validate(this)" placeholder="الرجاء كتابة الاسم  بالانجليزية"required /> 
+                            <div id="errFirst"></div>    
+                </div>
+    
+                <div class="form-group">
+                    <label for="lastname"><span class="req">* </span> اسم العائلة: </label> 
+                        <input class="form-control" type="text" name="lastname" id = "txt" onkeyup = "Validate(this)" placeholder="الرجاء كتابة الاسم  بالانجليزية" required />  
+                            <div id="errLast"></div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email"><span class="req">* </span>البريد الالكتروني: </label> 
+                        <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" />   
+                            <div class="status" id="status"></div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="username"><span class="req">* </span> الرقم الجامعي:  <small></small> </small> </label> 
+                        <input class="form-control" type="text" name="username" id = "phone" onkeyup = "validatephone(this)" placeholder="يستخدم لتسجيل الدخول لاحقا" required />  
+                            <div id="errLast"></div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password"><span class="req">* </span> Password: </label>
+                        <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="8"  id="pass1" /> </p>
+    
+                    <label for="password"><span class="req">* </span> Password Confirm: </label>
+                        <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="8" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                            <span id="confirmMessage" class="confirmMessage"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phonenumber"><span class="req">* </span> رقم الجوال: </label>
+                            <input required type="text" name="phonenumber" id="phone" class="form-control phone" maxlength="10" onkeyup="validatephone(this);" placeholder="055"/> 
+                    </div>
+                    <div class ="form-group">
+                        <label for ="collage"><span class="req">*</span>الكلية:</label>
+                       
+                        <select class="form-control" type="text" name="collage" id="txt" onkeyup = "Validate(this)" placeholder="" required />">
+                          <option>كلية الحاسب </option>
+                          <option>كلية العلوم</option>
+                          <option>كليةالعلوم الادارية</option>
+                          <option>كلية اللغات والترجمة</option>
+                        </select>
+                      </div>
+                         
+                   
+
+                    <div class ="form-group">
+                        <label for ="intrested"><span class="req">*</span>الاهتمامات:</label>
+                    </br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">التنظيم</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">التصميم</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                            <label class="form-check-label" for="inlineCheckbox3">الارشاد </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" >
+                            <label class="form-check-label" for="inlineCheckbox4">التصوير </label>
+                          </div>
+                          <input class="form-control" type="text" name="otherintrested" id="txt" onkeyup = "Validate(this)" placeholder="اهتمامات اخرى"  />
+                    </div>
+    
+              
+    
+                <div class="form-group">
+
+                  <button type="button" class="btn btn-success btn-lg btn-block login-button">Register</button>
+       
+                </div>
+                          <h6>You will receive an email to complete the registration and validation process. </h6>
+                          <h6>Be sure to check your spam folders. </h6>
+     
+    
+                </fieldset>
+                </form><!-- ends register form -->
+    
+    
+            </div><!-- ends col-6 -->
+       
+                
+    
+        </div>
+    </div>
+    
+    <script src="js/myjs.js"> </script>
+    <script src="js/popper.js"> </script>	 
+   <script src="js/bootstrap.min.js"> </script> 
+</body>
+</html>
